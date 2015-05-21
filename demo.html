@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Luck弹层解决方案 | 前端老徐</title>
+<link rel="stylesheet" href="http://www.loveqiao.com/css/public.css">
+<link rel="stylesheet" href="http://cdn.loveqiao.com/buttons.css">
+</head>
+
+<body>
+<div style="padding:100px 0; text-align:center">
+    <input type="button" value="信息框" class="button button-3d button-primary button-rounded" onClick="luck1()">
+    <input type="button" value="提示框" class="button button-3d button-action button-rounded" onClick="luck2()">
+    <input type="button" value="询问框" class="button button-3d button-highlight button-rounded" onClick="luck3()">
+    <input type="button" value="自定义层" class="button button-3d button-caution button-rounded" onClick="luck4()">
+    <input type="button" value="自定义层实现-加载层" class="button button-3d button-royal button-rounded" onClick="luck5()">
+    <input type="button" value="自定义层实现-全屏层" class="button button-3d button-primary button-rounded" onClick="luck6()">
+</div>
+<script src="luck/luck.min.js"></script> 
+<script>
+//信息框
+function luck1(){
+	luck.open({
+		content: '大家好我是luck！',
+		style:'background:#229FFD;color:#fff',
+		time:2000
+	});
+	_hmt.push(['_trackEvent','luck-mobile-信息框','click'])
+}
+
+//提示框
+function luck2(){
+	luck.open({
+		title: ['系统提示','background-color:#8DCE16; color:#fff'],
+		content: '忘了介绍我的品种了，我是一只活泼可爱的白色蝴蝶犬！',
+	});
+	_hmt.push(['_trackEvent','luck-mobile-提示框','click'])
+}
+
+//询问框
+function luck3(){
+	luck.open({
+		title: ['猜猜看','background:#e59501;color:#fff'],//标题
+		content: '你们猜我是男孩还是女孩？',//内容
+		btn:['男孩','女孩'],
+		yes:function(){
+			luck.open({content: '很遗憾答错了！', time: 1500});
+		},
+		no: function(){
+			luck.open({content: '恭喜你答对了！', time: 1500});
+		}
+	});
+	_hmt.push(['_trackEvent','luck-mobile-询问框','click'])
+}
+
+//自定义层
+function luck4(){
+	luck.open({
+		type:1,
+		content: '<div style="padding:20px;">这是一个自定义弹层样式,你可以任意定义风格。<p style="text-align:center;margin-top:20px;"><input type="button" class="button button-small button-primary button-rounded" value="自定义关闭按钮" onclick="luck.close()"></p></div>'
+	});
+	_hmt.push(['_trackEvent','luck-mobile-自定义层','click'])
+}
+
+//自定义-加载层
+function luck5(){
+	luck.open({
+		type:1,
+		content: '<div class="loading"></div>',
+		style:'min-width:50px;',
+	});
+	_hmt.push(['_trackEvent','luck-mobile-加载层','click'])
+}
+
+//自定义-全屏层
+function luck6(){
+	luck.open({
+		type:1,
+		content: '<div style="padding:100px 0;color:#fff;text-align:center"><h1>这是一个通过自定义弹层实现的全屏层。</h1><p style="margin-top:100px;"><input class="button" type="button" value="我要关闭" onclick="luck.open({content:\'世界恢复原样→_→\',time:1})"></p></div>',
+		style:'width:100%;height:100%;max-width:100%;background:#3f3f3f'
+	});
+	_hmt.push(['_trackEvent','luck-mobile-全屏层','click'])
+}
+</script> 
+<script src="http://www.loveqiao.com/js/public.js"></script>
+</body>
+</html>
