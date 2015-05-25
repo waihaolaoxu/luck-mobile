@@ -134,7 +134,7 @@
 				break
 			}
 		}
-		return str.split('luck.js')[0]+'/luck.css';
+		return str.split('luck.js')[0]+'luck.css';
 	}
 	document.head.appendChild(function(){
 		var a=c.createElement("link");
