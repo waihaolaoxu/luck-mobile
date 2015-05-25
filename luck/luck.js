@@ -124,8 +124,20 @@
             c.body.removeChild(obj);
         }
     };
+	var style='';
+	function getStyle(){
+		var obj=null,len=document.scripts.length,str='';
+		for(var i=0;i<len;i++){
+			obj=document.scripts[i];
+			if(obj.src.indexOf('luck.js')>=0){
+				str=obj.src
+				break
+			}
+		}
+		return str.split('luck.js')[0]+'/luck.css';
+	}
 	document.head.appendChild(function(){
 		var a=c.createElement("link");
-		a.href="luck/luck.css"/*配置css引用路径*/,a.type="text/css",a.rel="styleSheet",a.id="luckcss";return a
+		a.href=style?style:getStyle(),a.type="text/css",a.rel="styleSheet",a.id="luckcss";return a
 	}())
 }(window);
