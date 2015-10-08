@@ -1,10 +1,10 @@
 /*
- @ name：luck弹层组件-mobile
- @ author：前端老徐
- @ time：2015/5/12
- @ e-mail：442413729@qq.com
- @ weibo:http://weibo.com/qdlaoxu
- @ address:http://www.loveqiao.com/
+ @ Name：luck弹层组件-mobile
+ @ Author：前端老徐
+ @ Date：2015/5/12
+ @ Email：442413729@qq.com
+ @ Weibo:http://weibo.com/qdlaoxu
+ @ Address:http://www.loveqiao.com/
 */
 !function(a) {
     "use strict";
