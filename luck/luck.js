@@ -28,7 +28,7 @@
             var oShade = c.createElement("div");
             oShade.className = "luck-shade";
             //遮罩层点击操作
-            if (!("shadeClose" in opt) || opt.shadeClose) {
+            if (opt.shadeClose) {
                 oShade.onclick = function() {
                     a.luck.close();
                 };
